@@ -1,10 +1,10 @@
 db_engine = node.content['aps-core']['db']['engine']
-mysql_driver_version = node.content['aps-core']['mysql_driver']['version']
+postgres_driver_version = node.content['aps-core']['postgres_driver']['version']
 
 control 'postgres-connector' do
   impact 0.9
   title 'Check existance of postgres-connector'
-  only_if { db_engine == 'postgres'}
+  only_if { db_engine == 'postgres' }
 
   describe file("/usr/share/tomcat/lib/postgresql-#{postgres_driver_version}.jar") do
     it { should exist }

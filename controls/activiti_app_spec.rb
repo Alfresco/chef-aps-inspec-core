@@ -36,5 +36,4 @@ control 'Activiti app and properties' do
     it { should_not be_readable.by_user('nginx') }
     it { should_not be_executable.by_user('nginx') }
   end
-
 end
