@@ -5,7 +5,7 @@ control 'mysql-connector' do
   title 'Check existance of mysql-connector'
   only_if { db_engine == 'mysql' }
 
-  describe file("/usr/share/tomcat/lib/mysql-connector-java.jar") do
+  describe file('/usr/share/tomcat/lib/mysql-connector-java.jar') do
     it { should exist }
     it { should be_file }
     its('mode') { should cmp '0740' }

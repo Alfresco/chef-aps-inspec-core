@@ -5,7 +5,7 @@ control 'postgres-connector' do
   title 'Check existance of postgres-connector'
   only_if { db_engine == 'postgres' }
 
-  describe file("/usr/share/tomcat/lib/postgresql.jar") do
+  describe file('/usr/share/tomcat/lib/postgresql.jar') do
     it { should exist }
     it { should be_file }
     its('mode') { should cmp '0740' }
